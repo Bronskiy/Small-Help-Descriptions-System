@@ -1,0 +1,26 @@
+<?php include('_includes/header.php'); ?>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Assignment 3</h1>
+</div>
+<div class="col-md-8">
+  <h3>Palindrome Detector</h3>
+  <?php if($messages['Results']) {?>
+  <div class="alert alert-primary" role="alert">
+  <?php echo $messages['Results'][0]; ?>
+</div>
+<?php } ?>
+  <hr class="mb-4">
+  <form class="" method="post" action="assignment3/check">
+    <div class="mb-3">
+      <label for="palindrome">String</label>
+      <input type="text" class="form-control" id="palindrome" name="palindrome" placeholder="" value="" required>
+      <div class="invalid-feedback">
+        Valid first name is required.
+      </div>
+    </div>
+
+    <hr class="mb-4">
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Check</button>
+  </form>
+</div>
+<?php include('_includes/footer.php'); ?>

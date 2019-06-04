@@ -1,0 +1,102 @@
+<?php include('_includes/header.php'); ?>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Assignment 4</h1>
+</div>
+<div class="col-md-8">
+  <h3>Anagram Detector</h3>
+  <div class="alert alert-primary" role="alert" style="display:none;">qweqw</div>
+  <hr class="mb-4">
+  <form class="anagram-detector" onsubmit="return anagramCheck();">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="anagram1">String 1</label>
+        <input type="text" class="form-control" id="anagram1" name="anagram1" placeholder="" value="" required>
+        <div class="invalid-feedback">
+          Valid first name is required.
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="anagram2">String 2</label>
+        <input type="text" class="form-control" id="anagram2" name="anagram2" placeholder="" value="" required>
+        <div class="invalid-feedback">
+          Valid last name is required.
+        </div>
+      </div>
+    </div>
+
+    <hr class="mb-4">
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Check</button>
+  </form>
+</div>
+<script type="text/javascript">
+// prepare array with letters only
+var chars = [
+  ['A','a'],
+  ['B','b'],
+  ['C','c'],
+  ['D','d'],
+  ['E','e'],
+  ['F','f'],
+  ['G','g'],
+  ['H','h'],
+  ['I','i'],
+  ['J','j'],
+  ['K','k'],
+  ['L','l'],
+  ['M','m'],
+  ['N','n'],
+  ['O','o'],
+  ['P','p'],
+  ['Q','q'],
+  ['R','r'],
+  ['S','s'],
+  ['T','t'],
+  ['U','u'],
+  ['V','v'],
+  ['W','w'],
+  ['X','x'],
+  ['Y','y'],
+  ['Z','z']
+];
+
+function anagramCheck(anagram1,anagram2)
+{
+  // get alert container
+  var alert = document.getElementsByClassName('alert-primary');
+  var results = 'no results';
+
+  // get input fields values
+  var anagram1 = document.getElementById('anagram1').value;
+  var anagram2 = document.getElementById('anagram2').value;
+
+  function normalizeString(string)
+  {
+    var newString = '';
+    //checking in alphabet order
+    //it will ignore numbers, non english letters and any punctuation
+    for (var arrKey in chars) {
+      for (var key in string) {
+        if (string[key] == chars[arrKey][0] || string[key] == chars[arrKey][1]) {
+          //if letter exist then add to new string in lowercase
+          newString = newString + chars[arrKey][1];
+        }
+      }
+    }
+    return newString;
+  }
+
+  if (normalizeString(anagram1) !== normalizeString(anagram2)) {
+    var results = anagram1 + ' <b>is not anagram of</b> ' + anagram2;
+  } else {
+    var results = anagram1 + ' <b>is anagram of</b> ' + anagram2;
+  }
+
+  // push results to the alert block
+  alert[0].style.display = 'block';
+  alert[0].innerHTML = results;
+
+  // prevent submit
+  return false;
+}
+</script>
+<?php include('_includes/footer.php'); ?>
