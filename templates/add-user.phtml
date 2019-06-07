@@ -1,0 +1,30 @@
+<?php include('_includes/header.php'); ?>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Add User</h1>
+</div>
+<div class="col-md-8">
+  <form class="" action="/help/register" method="post">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" name="username" id="username" aria-describedby="username" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label for="userEmail">Email address</label>
+      <input type="email" class="form-control" name="userEmail" id="userEmail" aria-describedby="userEmail" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="userRole">User Role</label>
+      <select class="form-control" id="userRole" name="userRole">
+        <option value="1">User</option>
+        <option value="2">Admin</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="userPassword">Password</label>
+      <input type="password" name="userPassword" class="form-control" id="userPassword" autocomplete="new-password" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+<?php include('_includes/footer.php'); ?>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Ball</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function() {
+      setInterval(interval, 1000);
+      interval();
+      function interval() {
+        $("[data-from]").each(function() {
+          var data = $(this).data(),
+          now = new Date(),
+          from = new Date(data.from),
+          to = new Date(data.to);
+          console.log(now, from, to, (to - now) / 1000);
+          $(this).toggle(now >= from && now < to);
+        })
+      }
+    })
+  </script>
+  <style>
+    [data-from] { display: none; }
+  </style>
+</head>
+<body>
+  <div data-from="March 20, 2019 14:25:00 PST" data-to="March 21, 2019 00:00:00 PST">
+    <p>
+      <a href="https://store.rc4wd.com/Thursday-Deals_ep_76-1.html"><img src="https://www.rc4wdteam.com/Marketing/Banners/DailyDealsBanner.gif" alt="ThursdayDealBanner" width="400px" /></a>
+    </p>
+  </body>
+  </html>

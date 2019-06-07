@@ -1,0 +1,29 @@
+<?php include('_includes/header.php'); ?>
+<?php
+//echo "<pre>";
+//var_dump($_SESSION);
+//echo "<pre>";
+
+?>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Edit description</h1>
+</div>
+<div class="col-md-8">
+  <form class="" action="/help/descriptions/update" method="post">
+    <input type="hidden" name="id" value="<?php echo $description['id']; ?>">
+    <div class="form-group">
+      <label for="newId">Description Id</label><br>
+      <small>(Numetric only, 9 digits MAX)</small>
+      <input type="text" class="form-control" name="newId" id="newId" value="<?php echo $description['id']; ?>">
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" class="form-control" name="subject" id="subject" aria-describedby="subject" value="<?php echo $description['subject']; ?>">
+    </div>
+    <div class="form-group">
+      <textarea name="description_body" id="editor"><?php echo $description['description_body']; ?></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+<?php include('_includes/footer.php'); ?>

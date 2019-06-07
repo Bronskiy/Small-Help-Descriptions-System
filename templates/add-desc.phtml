@@ -1,0 +1,30 @@
+<?php include('_includes/header.php'); ?>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Add description</h1>
+</div>
+<div class="col-md-8">
+  <form class="" action="/help/descriptions/add" method="post">
+    <div class="form-group">
+      <label for="descId">Description Id</label><br>
+      <small>(Numetric only, 9 digits MAX)</small>
+      <?php if ($new_desc_id) { ?>
+        <input type="text" class="form-control" name="descId" id="descId" value="<?php echo $new_desc_id; ?>">
+      <?php } else { ?>
+        <input type="text" class="form-control" name="descId" id="descId" value="<?php echo rand(pow(10, 9-1), pow(10, 9)-1); ?>">
+      <?php } ?>
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" class="form-control" id="subject" name="subject" aria-describedby="subject" placeholder="Add subject" required>
+    </div>
+    <div class="form-group">
+      <textarea name="description_body" id="editor">
+        &lt;p&gt;This is some sample content.&lt;/p&gt;
+      </textarea>
+    </body>
+    </html>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
+<?php include('_includes/footer.php'); ?>

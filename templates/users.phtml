@@ -8,21 +8,37 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
           <th>Role</th>
+          <th>Date created</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1,001</td>
-          <td>Lorem</td>
-          <td>Lorem</td>
-        </tr>
-        <tr>
-          <td>1,002</td>
-          <td>amet</td>
-          <td>amet</td>
-        </tr>
+        <?php foreach ($users as $key => $value) {
+          ?>
+          <tr>
+            <td><?php echo $key+1; ?></td>
+            <td><?php echo $value['username']; ?></td>
+            <td><?php echo $value['email']; ?></td>
+            <td>
+              <?php if ($value['role_id'] == 1) {
+                echo 'User';
+              } elseif ($value['role_id'] == 2) {
+                echo 'Admin';
+              }  ?>
+            </td>
+            <td><?php echo $value['created_at']; ?></td>
+            <td>
+              <div class="btn-group mr-2">
+                <a href="/help/users/<?php echo $value['id']; ?>/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+                <a href="/help/users/<?php echo $value['id']; ?>/delete" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</a>
+              </div>
+            </td>
+          </tr>
+          <?php
+        } ?>
       </tbody>
     </table>
   </div>

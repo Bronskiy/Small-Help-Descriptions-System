@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
-  <title>Index Template · Bootstrap</title>
+  <title>Create New Description · Bootstrap</title>
 
   <link href="/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,10 +27,9 @@
 <body class="text-center">
   <div class="container">
 
-
-      <?php
-      if($errors){
-        echo '<div class="row"><div class="alert alert-warning" style="margin:0 auto;">';
+    <?php
+    if($errors){
+      echo '<div class="row"><div class="alert alert-warning" style="margin:0 auto;">';
       foreach ($errors as $paramErrors) {
         foreach ($paramErrors as $error) {
           echo "<p>".$error."</p>";
@@ -39,15 +38,24 @@
       echo "</div></div>";
     }?>
 
-
-  <div class="hereForm row">
-
+    <div class="hereForm row">
+      <form class="form-signin" id="sign-in" method="post" action="login">
+        <input type="hidden" name="new_desc_id" value="<?php echo $new_desc_id; ?>">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputLogin" class="sr-only">Username or Email</label>
+        <input type="text" id="inputLogin" name="inputLogin" class="form-control" placeholder="Username or Email" required="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2019</p>
+      </form>
+    </div>
   </div>
-</div>
-
+  <!--
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   <script type="text/babel" src="/assets/js/homeApp.js"></script>
+-->
 </body>
 </html>

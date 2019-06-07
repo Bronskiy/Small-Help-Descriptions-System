@@ -78,5 +78,30 @@
   });
 </script>
 <?php endif; ?>
+<?php if ($uri_segments[2] === 'descriptions') { ?>
+<script>
+ClassicEditor
+.create( document.querySelector( '#editor' ), {
+  ckfinder: {
+    uploadUrl: '/assets/lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+  }
+} )
+.catch( error => {
+  console.error( error );
+} );
+</script>
+<?php } ?>
+<script>
+    document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+        // Create the <a href="..." class="embedly-card"></a> element that Embedly uses
+        // to discover the media.
+        const anchor = document.createElement( 'a' );
+
+        anchor.setAttribute( 'href', element.getAttribute( 'url' ) );
+        anchor.className = 'embedly-card';
+
+        element.appendChild( anchor );
+    } );
+</script>
 </body>
 </html>
