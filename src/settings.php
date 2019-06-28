@@ -18,10 +18,10 @@ return [
 
     // Database settings
     'db' => [
-      'host' => 'localhost',
-      'user' => 'xY0WTL7UlF1l',
-      'pass' => 'tMhJ4wrwP6SzHhQ',
-      'dbname' => 'dieprojektsoftware-wp-AYv86ORv',
+      'host' => 'mysql5.risikobeurteilung.at-web.biz',
+      'user' => 'db492073_8',
+      'pass' => '14paj*cezPup',
+      'dbname' => 'db492073_8',
     ],
   ],
 ];

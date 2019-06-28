@@ -1,7 +1,15 @@
 body {
   font-size: .875rem;
 }
-
+.h2, h2{
+  font-size: 3rem;
+}
+.h3, h3{
+  font-size: 2.3rem;
+}
+.mb-20{
+  margin-bottom: 20px;
+}
 .feather {
   width: 16px;
   height: 16px;
@@ -12,6 +20,10 @@ body {
 }
 .contact-alerts{
   margin: 25px 0;
+}
+blockquote {
+    padding-left: 10px;
+    border-left: 5px solid #b9b9b9;
 }
 /*
  * Sidebar

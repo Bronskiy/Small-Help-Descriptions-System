@@ -78,7 +78,7 @@
   });
 </script>
 <?php endif; ?>
-<?php if ($uri_segments[2] === 'descriptions') { ?>
+<?php if ($uri_segments[1] === 'descriptions' || $uri_segments[1] === 'login') { ?>
 <script>
 ClassicEditor
 .create( document.querySelector( '#editor' ), {

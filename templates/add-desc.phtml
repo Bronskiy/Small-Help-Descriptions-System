@@ -3,7 +3,7 @@
   <h1 class="h2">Add description</h1>
 </div>
 <div class="col-md-8">
-  <form class="" action="/help/descriptions/add" method="post">
+  <form class="" action="/descriptions/add" method="post">
     <div class="form-group">
       <label for="descId">Description Id</label><br>
       <small>(Numetric only, 9 digits MAX)</small>
@@ -16,6 +16,11 @@
     <div class="form-group">
       <label for="subject">Subject</label>
       <input type="text" class="form-control" id="subject" name="subject" aria-describedby="subject" placeholder="Add subject" required>
+    </div>
+
+    <div class="form-check mb-20">
+      <input type="checkbox" class="form-check-input" name="hiddenDesc" id="hiddenDesc">
+      <label class="form-check-label" for="hiddenDesc">Hide from the users list</label>
     </div>
     <div class="form-group">
       <textarea name="description_body" id="editor">
